@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     reservations = ec.describe_instances(
         Filters=[
             {'Name': 'tag-key', 'Values': ['Backup']},
-            {'Name': 'instance-state-name', 'Values': ['running']}
+            {'Name': 'instance-state-name', 'Values': ['stopped']}
         ]
     ).get(
         'Reservations', []
